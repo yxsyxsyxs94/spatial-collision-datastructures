@@ -123,7 +123,9 @@ namespace SpatialTest
             std::vector<ISpatialObject*>::iterator iter_object;
             for(iter_object = m_vecObjects.begin(); iter_object != m_vecObjects.end(); iter_object++)
             {
+                //空间中的一个显示对象
                 pElement = (*iter_object);
+                //获取这个对象的原来所属的cell，这里是指OctreeNode
                 pNode = static_cast<OctreeNode*>(pElement->VGetCell());
             
                 // [rad] Remove element
@@ -475,7 +477,7 @@ namespace SpatialTest
             {
                 // [rad] Contained in existing child node
                 //m_pChildren[i32Position]->AddObject(pObject);
-                
+                //把已经存在或不存在apChildObjects[i32Position]拿出来，连接上当前的显示节点，并重新放到apChildObjects数组里
                 pIter->VSetNext(apChildObjects[i32Position]);
                 apChildObjects[i32Position] = pIter;
             
