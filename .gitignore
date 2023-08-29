@@ -3,3 +3,4 @@
 
 # Ignore build and temp directories.
 _bin*
+/build
